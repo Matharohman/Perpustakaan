@@ -7,30 +7,6 @@
 
   <style>
 
-@keyframes fadeUp{
-  from{
-    opacity:0;
-    transform:translateY(40px);
-  }
-
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
-.hero h1{
-  font-size:58px;
-  margin-bottom:15px;
-  animation:fadeUp 1s ease;
-}
-
-.hero p{
-  font-size:20px;
-  line-height:1.8;
-  animation:fadeUp 1.4s ease;
-}
-
     *{
       margin:0;
       padding:0;
@@ -38,13 +14,29 @@
       font-family:Arial, Helvetica, sans-serif;
     }
 
+    html{
+      scroll-behavior:smooth;
+    }
+
     body{
       background:#f5efe6;
       color:#2d2d2d;
+      padding-top:90px;
     }
 
-    html{
-      scroll-behavior:smooth;
+    /* ANIMASI */
+    @keyframes fadeUp{
+
+      from{
+        opacity:0;
+        transform:translateY(40px);
+      }
+
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+
     }
 
     /* HEADER */
@@ -62,32 +54,31 @@
       align-items:center;
     }
 
+    /* LOGO */
     .logo{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  color:white;
-  font-size:28px;
-  font-weight:bold;
-}
+      display:flex;
+      align-items:center;
+      gap:12px;
+      color:white;
+      font-size:28px;
+      font-weight:bold;
+    }
 
-.logo img{
-  width:55px;
-  height:55px;
-  object-fit:contain;
-}
+    .logo img{
+      width:55px;
+      height:55px;
+      object-fit:contain;
+      transition:0.3s;
+      border-radius:50%;
+      background:white;
+      padding:5px;
+    }
 
-.logo img{
-  width:55px;
-  height:55px;
-  object-fit:contain;
-  transition:0.3s;
-}
+    .logo img:hover{
+      transform:rotate(-5deg) scale(1.08);
+    }
 
-.logo img:hover{
-  transform:rotate(-5deg) scale(1.08);
-}
-
+    /* NAVBAR */
     nav{
       display:flex;
       gap:15px;
@@ -117,14 +108,21 @@
       background:
       linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
       url('https://images.unsplash.com/photo-1516979187457-637abb4f9353?q=80&w=1400&auto=format&fit=crop');
+
       background-size:cover;
       background-position:center;
+
       display:flex;
       justify-content:center;
       align-items:center;
       text-align:center;
+
       color:white;
-      padding:120px 20px 50px;
+      padding:20px;
+    }
+
+    .hero-content{
+      animation:fadeUp 1s ease;
     }
 
     .hero h1{
@@ -164,7 +162,7 @@
       border-radius:22px;
       overflow:hidden;
       box-shadow:0 5px 15px rgba(0,0,0,0.1);
-      transition:0.3s;
+      transition:0.35s ease;
     }
 
     .pengumuman-card:hover{
@@ -212,6 +210,10 @@
       margin-top:50px;
     }
 
+    footer p{
+      line-height:1.8;
+    }
+
     /* RESPONSIVE */
     @media(max-width:768px){
 
@@ -244,16 +246,18 @@
 
     <div class="logo">
 
-  <img src="images/logo.png">
+      <img src="images/logo.png">
 
-  <span>MacaYuk</span>
+      <span>MacaYuk</span>
 
-</div>
+    </div>
 
     <nav>
       <a href="index.html">Beranda</a>
       <a href="buku.html">Buku</a>
-      <a href="pengumuman.html" class="active">Pengumuman</a>
+      <a href="pengumuman.html" class="active">
+        Pengumuman
+      </a>
     </nav>
 
   </header>
@@ -261,7 +265,7 @@
   <!-- HERO -->
   <section class="hero">
 
-    <div>
+    <div class="hero-content">
 
       <h1>Pengumuman</h1>
 
@@ -299,8 +303,8 @@
           </h3>
 
           <p>
-            MacaYuk menambahkan berbagai
-            koleksi novel, buku teknologi, dan sejarah terbaru.
+            MacaYuk menambahkan berbagai koleksi
+            novel, buku teknologi, dan sejarah terbaru.
           </p>
 
         </div>
@@ -361,9 +365,15 @@
 
   <!-- FOOTER -->
   <footer>
+
     <p>
       © 2026 MacaYuk
     </p>
+
+    <p>
+      Membaca Membuka Jendela Dunia 📚
+    </p>
+
   </footer>
 
 </body>
