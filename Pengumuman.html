@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pengumuman | Maca Yuk</title>
+
+  <style>
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(40px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+.hero h1{
+  font-size:58px;
+  margin-bottom:15px;
+  animation:fadeUp 1s ease;
+}
+
+.hero p{
+  font-size:20px;
+  line-height:1.8;
+  animation:fadeUp 1.4s ease;
+}
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background:#f5efe6;
+      color:#2d2d2d;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    /* HEADER */
+    header{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      z-index:1000;
+      background:rgba(139,90,43,0.95);
+      backdrop-filter:blur(10px);
+      padding:18px 8%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:white;
+  font-size:28px;
+  font-weight:bold;
+}
+
+.logo img{
+  width:55px;
+  height:55px;
+  object-fit:contain;
+}
+
+.logo img{
+  width:55px;
+  height:55px;
+  object-fit:contain;
+  transition:0.3s;
+}
+
+.logo img:hover{
+  transform:rotate(-5deg) scale(1.08);
+}
+
+    nav{
+      display:flex;
+      gap:15px;
+    }
+
+    nav a{
+      color:white;
+      text-decoration:none;
+      padding:10px 18px;
+      border-radius:8px;
+      transition:0.3s;
+      font-weight:bold;
+    }
+
+    nav a:hover{
+      background:rgba(255,255,255,0.2);
+    }
+
+    .active{
+      background:white;
+      color:#8b5a2b;
+    }
+
+    /* HERO */
+    .hero{
+      height:50vh;
+      background:
+      linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+      url('https://images.unsplash.com/photo-1516979187457-637abb4f9353?q=80&w=1400&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      color:white;
+      padding:120px 20px 50px;
+    }
+
+    .hero h1{
+      font-size:58px;
+      margin-bottom:15px;
+    }
+
+    .hero p{
+      font-size:20px;
+      line-height:1.8;
+    }
+
+    /* CONTAINER */
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
+      padding:80px 0;
+    }
+
+    .title{
+      text-align:center;
+      font-size:42px;
+      color:#8b5a2b;
+      margin-bottom:50px;
+    }
+
+    /* CARD */
+    .pengumuman-wrapper{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:30px;
+    }
+
+    .pengumuman-card{
+      background:white;
+      border-radius:22px;
+      overflow:hidden;
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+      transition:0.3s;
+    }
+
+    .pengumuman-card:hover{
+      transform:translateY(-10px);
+    }
+
+    .pengumuman-card img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+    }
+
+    .pengumuman-content{
+      padding:25px;
+    }
+
+    .tanggal{
+      display:inline-block;
+      background:#f3e1cc;
+      color:#8b5a2b;
+      padding:6px 14px;
+      border-radius:20px;
+      font-size:13px;
+      font-weight:bold;
+      margin-bottom:15px;
+    }
+
+    .pengumuman-content h3{
+      color:#8b5a2b;
+      margin-bottom:15px;
+      font-size:24px;
+    }
+
+    .pengumuman-content p{
+      line-height:1.8;
+      color:#555;
+    }
+
+    /* FOOTER */
+    footer{
+      background:#6d431d;
+      color:white;
+      text-align:center;
+      padding:25px;
+      margin-top:50px;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:768px){
+
+      header{
+        flex-direction:column;
+        gap:20px;
+      }
+
+      nav{
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      .hero h1{
+        font-size:40px;
+      }
+
+      .hero p{
+        font-size:17px;
+      }
+
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+
+    <div class="logo">
+
+  <img src="images/logo.png">
+
+  <span>MacaYuk</span>
+
+</div>
+
+    <nav>
+      <a href="index.html">Beranda</a>
+      <a href="buku.html">Buku</a>
+      <a href="pengumuman.html" class="active">Pengumuman</a>
+    </nav>
+
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <div>
+
+      <h1>Pengumuman</h1>
+
+      <p>
+        Informasi terbaru seputar kegiatan dan layanan
+        MacaYuk.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- CONTENT -->
+  <section class="container">
+
+    <h2 class="title">
+      Informasi Terbaru
+    </h2>
+
+    <div class="pengumuman-wrapper">
+
+      <!-- CARD 1 -->
+      <div class="pengumuman-card">
+
+        <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="pengumuman-content">
+
+          <span class="tanggal">
+            14 Mei 2026
+          </span>
+
+          <h3>
+            Penambahan Koleksi Buku Baru
+          </h3>
+
+          <p>
+            MacaYuk menambahkan berbagai
+            koleksi novel, buku teknologi, dan sejarah terbaru.
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="pengumuman-card">
+
+        <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="pengumuman-content">
+
+          <span class="tanggal">
+            10 Mei 2026
+          </span>
+
+          <h3>
+            Lomba Literasi Sekolah
+          </h3>
+
+          <p>
+            Akan diadakan lomba membaca dan review buku
+            antar siswa pada akhir bulan ini.
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="pengumuman-card">
+
+        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="pengumuman-content">
+
+          <span class="tanggal">
+            5 Mei 2026
+          </span>
+
+          <h3>
+            Jam Operasional Baru
+          </h3>
+
+          <p>
+            Perpustakaan kini buka lebih lama mulai pukul
+            07.00 sampai 16.00 WIB setiap hari sekolah.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>
+      © 2026 MacaYuk
+    </p>
+  </footer>
+
+</body>
+</html>
