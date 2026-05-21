@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tips Belajar | MacaYuk</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background:#f5efe6;
+      color:#2d2d2d;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    /* HEADER */
+    header{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      z-index:1000;
+      background:rgba(139,90,43,0.95);
+      backdrop-filter:blur(10px);
+      padding:18px 8%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      color:white;
+      font-size:28px;
+      font-weight:bold;
+    }
+
+    .logo img{
+      width:55px;
+      height:55px;
+      object-fit:contain;
+      transition:0.3s;
+    }
+
+    .logo img:hover{
+      transform:rotate(-5deg) scale(1.08);
+    }
+
+    nav{
+      display:flex;
+      gap:15px;
+    }
+
+    nav a{
+      color:white;
+      text-decoration:none;
+      padding:10px 18px;
+      border-radius:8px;
+      transition:0.3s;
+      font-weight:bold;
+    }
+
+    nav a:hover{
+      background:rgba(255,255,255,0.2);
+    }
+
+    .active{
+      background:white;
+      color:#8b5a2b;
+    }
+
+    /* HERO */
+    .hero{
+      height:55vh;
+      background:
+      linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+      url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1400&auto=format&fit=crop');
+
+      background-size:cover;
+      background-position:center;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+
+      color:white;
+      padding:120px 20px 50px;
+    }
+
+    .hero-content{
+      animation:fadeUp 1s ease;
+    }
+
+    .hero h1{
+      font-size:60px;
+      margin-bottom:20px;
+    }
+
+    .hero p{
+      font-size:20px;
+      line-height:1.8;
+      max-width:700px;
+    }
+
+    /* CONTAINER */
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
+      padding:80px 0;
+    }
+
+    .title{
+      text-align:center;
+      color:#8b5a2b;
+      font-size:42px;
+      margin-bottom:50px;
+    }
+
+    /* CARD */
+    .tips-wrapper{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:30px;
+    }
+
+    .tips-card{
+      background:white;
+      padding:30px;
+      border-radius:22px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+      transition:0.3s;
+    }
+
+    .tips-card:hover{
+      transform:translateY(-10px);
+    }
+
+    .tips-icon{
+      font-size:50px;
+      margin-bottom:20px;
+    }
+
+    .tips-card h3{
+      color:#8b5a2b;
+      margin-bottom:15px;
+      font-size:24px;
+    }
+
+    .tips-card p{
+      line-height:1.8;
+      color:#555;
+    }
+
+    /* QUOTES */
+    .quotes{
+      margin-top:80px;
+      background:#8b5a2b;
+      color:white;
+      padding:50px;
+      border-radius:25px;
+      text-align:center;
+    }
+
+    .quotes h2{
+      font-size:38px;
+      margin-bottom:20px;
+    }
+
+    .quotes p{
+      font-size:20px;
+      line-height:1.8;
+    }
+
+    /* FOOTER */
+.footer{
+  background:#6d431d;
+  color:white;
+  margin-top:80px;
+  padding-top:60px;
+}
+
+.footer-container{
+  width:90%;
+  max-width:1200px;
+  margin:auto;
+
+  display:grid;
+  grid-template-columns:
+  repeat(auto-fit,minmax(220px,1fr));
+
+  gap:40px;
+}
+
+.footer-box h2,
+.footer-box h3{
+  margin-bottom:20px;
+}
+
+.footer-box p{
+  line-height:1.8;
+  color:#f1e4d6;
+}
+
+.footer-box a{
+  display:block;
+  color:#f1e4d6;
+  text-decoration:none;
+  margin-bottom:12px;
+  transition:0.3s;
+}
+
+.footer-box a:hover{
+  color:#ffd39e;
+  transform:translateX(5px);
+}
+
+.social{
+  display:flex;
+  flex-direction:column;
+}
+
+.footer-bottom{
+  text-align:center;
+  margin-top:50px;
+  padding:20px;
+  border-top:1px solid rgba(255,255,255,0.2);
+  font-size:14px;
+  color:#f1e4d6;
+}
+
+
+    /* ANIMATION */
+    @keyframes fadeUp{
+
+      from{
+        opacity:0;
+        transform:translateY(40px);
+      }
+
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:768px){
+
+      header{
+        flex-direction:column;
+        gap:20px;
+      }
+
+      nav{
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      .hero h1{
+        font-size:40px;
+      }
+
+      .hero p{
+        font-size:17px;
+      }
+
+      .quotes{
+        padding:35px 20px;
+      }
+
+      .quotes h2{
+        font-size:28px;
+      }
+
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+
+    <div class="logo">
+
+      <img src="images/logo.png">
+
+      <span>MacaYuk</span>
+
+    </div>
+
+    <nav>
+      <a href="index.html">Beranda</a>
+      <a href="buku.html">Buku</a>
+      <a href="pengumuman.html">Pengumuman</a>
+      <a href="tips.html" class="active">Tips Belajar</a>
+      <a href="tentang.html">Tentang</a>
+    </nav>
+
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <h1>Tips Belajar</h1>
+
+      <p>
+        Tingkatkan fokus, semangat, dan hasil belajar
+        bersama tips terbaik dari MacaYuk.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- CONTENT -->
+  <section class="container">
+
+    <h2 class="title">
+      Tips Belajar Efektif
+    </h2>
+
+    <div class="tips-wrapper">
+
+      <!-- CARD 1 -->
+      <div class="tips-card">
+
+        <div class="tips-icon">
+          📚
+        </div>
+
+        <h3>Belajar Fokus</h3>
+
+        <p>
+          Hindari distraksi seperti HP dan media sosial.
+          Gunakan tempat yang tenang agar lebih fokus.
+        </p>
+
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="tips-card">
+
+        <div class="tips-icon">
+          ⏰
+        </div>
+
+        <h3>Teknik Pomodoro</h3>
+
+        <p>
+          Belajar selama 25 menit lalu istirahat 5 menit.
+          Cara ini membantu otak tetap fresh.
+        </p>
+
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="tips-card">
+
+        <div class="tips-icon">
+          ✍
+        </div>
+
+        <h3>Mencatat Materi</h3>
+
+        <p>
+          Buat catatan penting menggunakan warna
+          agar lebih mudah diingat dan dipahami.
+        </p>
+
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="tips-card">
+
+        <div class="tips-icon">
+          🎯
+        </div>
+
+        <h3>Belajar Konsisten</h3>
+
+        <p>
+          Belajar sedikit setiap hari lebih baik
+          dibanding belajar mendadak saat ujian.
+        </p>
+
+      </div>
+
+      <!-- CARD 5 -->
+      <div class="tips-card">
+
+        <div class="tips-icon">
+          😴
+        </div>
+
+        <h3>Istirahat Cukup</h3>
+
+        <p>
+          Tidur yang cukup membantu otak
+          menyimpan informasi lebih baik.
+        </p>
+
+      </div>
+
+      <!-- CARD 6 -->
+      <div class="tips-card">
+
+        <div class="tips-icon">
+          🧠
+        </div>
+
+        <h3>Latihan Soal</h3>
+
+        <p>
+          Semakin sering latihan soal,
+          semakin mudah memahami materi pelajaran.
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- QUOTES -->
+    <div class="quotes">
+
+      <h2>
+        “Membaca Hari Ini,
+        Memimpin Esok Hari.”
+      </h2>
+
+      <p>
+        Jadikan membaca dan belajar sebagai kebiasaan
+        untuk masa depan yang lebih baik.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+<footer class="footer">
+
+  <div class="footer-container">
+
+    <div class="footer-box">
+
+      <h2>MacaYuk</h2>
+
+      <p>
+        Website literasi digital untuk membantu siswa
+        membaca dan berkembang bersama teknologi modern.
+      </p>
+
+    </div>
+
+    <div class="footer-box">
+
+      <h3>Menu</h3>
+
+      <a href="index.html">Beranda</a>
+      <a href="buku.html">Buku</a>
+      <a href="pengumuman.html">Pengumuman</a>
+      <a href="tips.html">Tips Belajar</a>
+      <a href="tentang.html">Tentang</a>
+
+    </div>
+
+    <div class="footer-box">
+
+      <h3>Kontak</h3>
+
+      <p>📍 Indonesia</p>
+      <p>📧 macayuk@gmail.com</p>
+      <p>📞 0812-3456-7890</p>
+
+    </div>
+
+    <div class="footer-box">
+
+      <h3>Sosial Media</h3>
+
+      <div class="social">
+
+        <a href="#">📘 Facebook</a>
+        <a href="#">📷 Instagram</a>
+        <a href="#">▶ YouTube</a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+
+    © 2026 MacaYuk • Membaca Membuka Jendela Dunia 📚
+
+  </div>
+
+</footer>
+
+</body>
+</html>
