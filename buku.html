@@ -135,27 +135,61 @@
     }
 
     /* SEARCH */
-    .search-box{
-      display:flex;
-      justify-content:center;
-      margin-bottom:50px;
-    }
+    /* SEARCH CONTAINER */
+.search-container{
+  width:100%;
+  background:white;
+  padding:18px;
+  border-radius:22px;
+  display:flex;
+  align-items:center;
+  gap:15px;
+  margin-bottom:50px;
+  box-shadow:0 5px 20px rgba(0,0,0,0.08);
+  flex-wrap:wrap;
+  border:2px solid #f0dcc4;
+}
 
-    .search-box input{
-      width:100%;
-      max-width:550px;
-      padding:16px 20px;
-      border-radius:12px;
-      border:2px solid #c98a45;
-      font-size:16px;
-      outline:none;
-      transition:0.3s;
-    }
+/* ICON */
+.search-icon{
+  font-size:22px;
+  color:#8b5a2b;
+}
 
-    .search-box input:focus{
-      border-color:#8b5a2b;
-      box-shadow:0 0 10px rgba(139,90,43,0.3);
-    }
+/* INPUT */
+.search-container input{
+  flex:1;
+  min-width:220px;
+  border:none;
+  outline:none;
+  font-size:16px;
+  color:#333;
+  background:transparent;
+}
+
+/* SELECT */
+.search-container select{
+  padding:12px 18px;
+  border:none;
+  border-radius:12px;
+  background:#f5efe6;
+  color:#8b5a2b;
+  font-weight:bold;
+  cursor:pointer;
+  outline:none;
+  transition:0.3s;
+}
+
+/* HOVER */
+.search-container select:hover{
+  background:#ead7c0;
+}
+
+/* FOCUS EFFECT */
+.search-container:focus-within{
+  border-color:#c98a45;
+  box-shadow:0 5px 25px rgba(201,138,69,0.25);
+}
 
     /* BOOK CARD */
     .card-wrapper{
@@ -231,13 +265,67 @@
     }
 
     /* FOOTER */
-    footer{
-      background:#6d431d;
-      color:white;
-      text-align:center;
-      padding:25px;
-      margin-top:50px;
-    }
+    /* FOOTER */
+.footer{
+  background:#6d431d;
+  color:white;
+  margin-top:80px;
+  padding-top:60px;
+}
+
+/* CONTAINER */
+.footer-container{
+  width:90%;
+  max-width:1200px;
+  margin:auto;
+
+  display:grid;
+  grid-template-columns:
+  repeat(auto-fit,minmax(220px,1fr));
+
+  gap:40px;
+}
+
+/* BOX */
+.footer-box h2,
+.footer-box h3{
+  margin-bottom:20px;
+}
+
+.footer-box p{
+  line-height:1.8;
+  color:#f1e4d6;
+}
+
+/* LINK */
+.footer-box a{
+  display:block;
+  color:#f1e4d6;
+  text-decoration:none;
+  margin-bottom:12px;
+  transition:0.3s;
+}
+
+.footer-box a:hover{
+  color:#ffd39e;
+  transform:translateX(5px);
+}
+
+/* SOCIAL */
+.social{
+  display:flex;
+  flex-direction:column;
+}
+
+/* COPYRIGHT */
+.footer-bottom{
+  text-align:center;
+  margin-top:50px;
+  padding:20px;
+  border-top:1px solid rgba(255,255,255,0.2);
+  font-size:14px;
+  color:#f1e4d6;
+}
 
     /* ANIMATION */
     @keyframes fadeUp{
@@ -358,6 +446,63 @@
   }
 
 }
+
+/* SEARCH AREA */
+.search-area{
+  display:flex;
+  gap:15px;
+  margin-bottom:40px;
+  flex-wrap:wrap;
+}
+
+/* INPUT */
+.search-area input{
+  flex:1;
+  min-width:250px;
+  padding:15px;
+  border:none;
+  border-radius:12px;
+  outline:none;
+  font-size:16px;
+  border:2px solid #d8b892;
+}
+
+/* SELECT */
+.search-area select{
+  padding:15px;
+  border:none;
+  border-radius:12px;
+  outline:none;
+  font-size:16px;
+  border:2px solid #d8b892;
+  background:white;
+  cursor:pointer;
+}
+
+/* RATING */
+.rating{
+  display:flex;
+  align-items:center;
+  gap:5px;
+  margin-bottom:18px;
+}
+
+.rating span{
+  cursor:pointer;
+  font-size:20px;
+  transition:0.2s;
+}
+
+.rating span:hover{
+  transform:scale(1.2);
+}
+
+.rating small{
+  margin-left:8px;
+  color:#777;
+  font-weight:bold;
+}
+
   </style>
 </head>
 <body>
@@ -376,7 +521,9 @@
     <nav>
       <a href="index.html">Beranda</a>
       <a href="buku.html" class="active">Buku</a>
-      <a href="Pengumuman.html">Pengumuman</a>
+      <a href="pengumuman.html">Pengumuman</a>
+      <a href="tips.html">Tips Belajar</a>
+      <a href="tentang.html">Tentang</a>
     </nav>
 
   </header>
@@ -404,21 +551,63 @@
       Buku Populer
     </h2>
 
-    <!-- SEARCH -->
-    <div class="search-box">
+ <!-- SEARCH AREA -->
+<div class="search-container">
 
-      <input 
-      type="text"
-      id="searchInput"
-      placeholder="Cari buku favoritmu...">
+  <!-- ICON -->
+  <div class="search-icon">
+    🔍
+  </div>
 
-    </div>
+  <!-- INPUT -->
+  <input 
+    type="text"
+    id="searchInput"
+    placeholder="Cari judul buku..."
+  >
+
+  <!-- CATEGORY -->
+  <select id="categoryFilter">
+
+    <option value="all">
+      Semua Kategori
+    </option>
+
+    <option value="Novel">
+      Novel
+    </option>
+
+    <option value="Sejarah">
+      Sejarah
+    </option>
+
+    <option value="Pendidikan">
+      Pendidikan
+    </option>
+
+    <option value="Romantis">
+      Romantis
+    </option>
+
+    <option value="Fiksi">
+      Fiksi
+    </option>
+
+    <option value="Religi">
+      Religi
+    </option>
+
+  </select>
+
+</div>
 
     <!-- CARD -->
     <div class="card-wrapper">
 
       <!-- CARD 1 -->
-     <div class="card buku-card" onclick="openModal(
+    <div class="card buku-card"
+data-category="Novel"
+onclick="openModal(
 'Laskar Pelangi',
 'Andrea Hirata',
 '2005',
@@ -441,8 +630,20 @@
             Novel inspiratif tentang perjuangan pendidikan
             anak-anak Belitung.
           </p>
+          
+          <div class="rating">
 
-         <button onclick="window.open('buku/Laskar-Pelangi.pdf')">
+  <span onclick="rateBook(this, 1)">⭐</span>
+  <span onclick="rateBook(this, 2)">⭐</span>
+  <span onclick="rateBook(this, 3)">⭐</span>
+  <span onclick="rateBook(this, 4)">⭐</span>
+  <span onclick="rateBook(this, 5)">⭐</span>
+
+  <small>(4.8)</small>
+
+</div>
+
+         <button onclick="window.open('buku/laskar-pelangi.pdf')">
    Baca Sekarang
 </button>
 
@@ -451,7 +652,8 @@
       </div>
 
       <!-- CARD 2 -->
-     <div class="card buku-card"
+    <div class="card buku-card"
+data-category="Sejarah"
 onclick="openModal(
 'Bumi Manusia',
 'Pramoedya Ananta Toer',
@@ -476,7 +678,19 @@ onclick="openModal(
             tentang sejarah Indonesia.
           </p>
 
-          <button onclick="window.open('buku/Bumi-Manusia.pdf')">
+          <div class="rating">
+
+  <span onclick="rateBook(this, 1)">⭐</span>
+  <span onclick="rateBook(this, 2)">⭐</span>
+  <span onclick="rateBook(this, 3)">⭐</span>
+  <span onclick="rateBook(this, 4)">⭐</span>
+  <span onclick="rateBook(this, 5)">⭐</span>
+
+  <small>(4.1)</small>
+
+</div>
+
+          <button onclick="window.open('buku/bumi-manusia.pdf')">
   Baca Sekarang
 </button>
 
@@ -486,6 +700,7 @@ onclick="openModal(
 
       <!-- CARD 3 -->
      <div class="card buku-card"
+data-category="Pendidikan"
 onclick="openModal(
 'Negeri 5 Menara',
 'Ahmad Fuadi',
@@ -510,6 +725,18 @@ onclick="openModal(
             cita-cita dan pendidikan.
           </p>
 
+          <div class="rating">
+
+  <span onclick="rateBook(this, 1)">⭐</span>
+  <span onclick="rateBook(this, 2)">⭐</span>
+  <span onclick="rateBook(this, 3)">⭐</span>
+  <span onclick="rateBook(this, 4)">⭐</span>
+  <span onclick="rateBook(this, 5)">⭐</span>
+
+  <small>(4.2)</small>
+
+</div>
+
          <button onclick="window.open('buku/negeri-5-menara.pdf')">
   Baca Sekarang
 </button>
@@ -518,53 +745,295 @@ onclick="openModal(
 
       </div>
 
+      <div class="card buku-card"
+data-category="Religi"
+onclick="openModal(
+'Ayat Ayat Cinta',
+'Habiburrahman El Shirazy',
+'2004',
+'Novel religi romantis yang sangat populer di Indonesia.',
+'images/ayatcinta.jpeg'
+)">
+
+  <div class="img-box">
+
+    <img src="images/ayatcinta.jpeg">
+
+  </div>
+
+  <div class="card-content">
+
+    <span class="kategori">
+      Religi
+    </span>
+
+    <h3 class="judul-buku">
+      Ayat Ayat Cinta
+    </h3>
+
+    <p>
+      Novel religi populer karya Habiburrahman El Shirazy.
+    </p>
+
+    <div class="rating">
+
+  <span onclick="rateBook(this, 1)">⭐</span>
+  <span onclick="rateBook(this, 2)">⭐</span>
+  <span onclick="rateBook(this, 3)">⭐</span>
+  <span onclick="rateBook(this, 4)">⭐</span>
+  <span onclick="rateBook(this, 5)">⭐</span>
+
+  <small>(4.3)</small>
+
+</div>
+
+    <button>
+       Baca Sekarang
+    </button>
+
+  </div>
+
+</div>
+
+<div class="card buku-card"
+data-category="Fiksi"
+onclick="openModal(
+'Hujan',
+'Tere Liye',
+'2016',
+'Novel tentang persahabatan, kehilangan, dan perjalanan hidup di masa depan.',
+'images/hujan.jpeg'
+)">
+
+  <div class="img-box">
+
+    <img src="images/hujan.jpeg">
+
+  </div>
+
+  <div class="card-content">
+
+    <span class="kategori">
+      Fiksi
+    </span>
+
+    <h3 class="judul-buku">
+      Hujan
+    </h3>
+
+    <p>
+      Novel karya Tere Liye tentang kehidupan,
+      kenangan, dan perasaan manusia.
+    </p>
+
+    <div class="rating">
+
+  <span onclick="rateBook(this, 1)">⭐</span>
+  <span onclick="rateBook(this, 2)">⭐</span>
+  <span onclick="rateBook(this, 3)">⭐</span>
+  <span onclick="rateBook(this, 4)">⭐</span>
+  <span onclick="rateBook(this, 5)">⭐</span>
+
+  <small>(4.4)</small>
+
+</div>
+
+    <button>
+       Baca Sekarang
+    </button>
+
+  </div>
+
+</div>
+
+<div class="card buku-card"
+data-category="Romantis"
+onclick="openModal(
+'Dilan 1990',
+'Pidi Baiq',
+'2014',
+'Novel remaja populer tentang kisah cinta Dilan dan Milea.',
+'images/dilan.jpeg'
+)">
+
+  <div class="img-box">
+
+    <img src="images/dilan.jpeg">
+
+  </div>
+
+  <div class="card-content">
+
+    <span class="kategori">
+      Romantis
+    </span>
+
+    <h3 class="judul-buku">
+      Dilan 1990
+    </h3>
+
+    <p>
+      Kisah romantis remaja SMA yang populer
+      di kalangan anak muda Indonesia.
+    </p>
+
+    <div class="rating">
+
+  <span onclick="rateBook(this, 1)">⭐</span>
+  <span onclick="rateBook(this, 2)">⭐</span>
+  <span onclick="rateBook(this, 3)">⭐</span>
+  <span onclick="rateBook(this, 4)">⭐</span>
+  <span onclick="rateBook(this, 5)">⭐</span>
+
+  <small>(4.3)</small>
+
+</div>
+
+    <button>
+       Baca Sekarang
+    </button>
+
+  </div>
+
+</div>
+
     </div>
 
   </section>
 
   <!-- FOOTER -->
-  <footer>
-    <p>
-      © 2026 MacaYuk
-    </p>
-  </footer>
+  <!-- FOOTER -->
+<footer class="footer">
 
-  <!-- SEARCH SCRIPT -->
+  <div class="footer-container">
+
+    <!-- BRAND -->
+    <div class="footer-box">
+
+      <h2>MacaYuk</h2>
+
+      <p>
+        Website literasi digital untuk membantu
+        siswa membaca, belajar, dan berkembang
+        bersama teknologi modern.
+      </p>
+
+    </div>
+
+    <!-- MENU -->
+    <div class="footer-box">
+
+      <h3>Menu</h3>
+
+      <a href="index.html">Beranda</a>
+      <a href="buku.html">Buku</a>
+      <a href="pengumuman.html">Pengumuman</a>
+      <a href="tips.html">Tips Belajar</a>
+      <a href="tentang.html">Tentang</a>
+
+    </div>
+
+    <!-- KONTAK -->
+    <div class="footer-box">
+
+      <h3>Kontak</h3>
+
+      <p>📍 Indonesia</p>
+      <p>📧 macayuk@gmail.com</p>
+      <p>📞 0812-3456-7890</p>
+
+    </div>
+
+    <!-- SOSIAL -->
+    <div class="footer-box">
+
+      <h3>Sosial Media</h3>
+
+      <div class="social">
+
+        <a href="#">📘 Facebook</a>
+        <a href="#">📷 Instagram</a>
+        <a href="#">▶ YouTube</a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- COPYRIGHT -->
+  <div class="footer-bottom">
+
+    © 2026 MacaYuk • Membaca Membuka Jendela Dunia 📚
+
+  </div>
+
+</footer>
+
   <script>
 
-    const searchInput =
-    document.getElementById("searchInput");
+const searchInput =
+document.getElementById("searchInput");
 
-    searchInput.addEventListener("input", function(){
+const categoryFilter =
+document.getElementById("categoryFilter");
 
-      const keyword =
-      searchInput.value.toLowerCase();
+const cards =
+document.querySelectorAll(".buku-card");
 
-      const cards =
-      document.querySelectorAll(".buku-card");
+/* FILTER */
+function filterBooks(){
 
-      cards.forEach(function(card){
+  const keyword =
+  searchInput.value.toLowerCase();
 
-        const judul =
-        card.querySelector(".judul-buku")
-        .textContent
-        .toLowerCase();
+  const category =
+  categoryFilter.value;
 
-        if(judul.includes(keyword)){
+  cards.forEach(card => {
 
-          card.style.display = "block";
+    const title =
+    card.querySelector(".judul-buku")
+    .textContent
+    .toLowerCase();
 
-        }else{
+    const cardCategory =
+    card.dataset.category;
 
-          card.style.display = "none";
+    const matchTitle =
+    title.includes(keyword);
 
-        }
+    const matchCategory =
+    category === "all" ||
+    cardCategory === category;
 
-      });
+    if(matchTitle && matchCategory){
 
-    });
+      card.style.display = "block";
 
-  </script>
+    } else {
+
+      card.style.display = "none";
+
+    }
+
+  });
+
+}
+
+/* EVENT */
+searchInput.addEventListener(
+  "input",
+  filterBooks
+);
+
+categoryFilter.addEventListener(
+  "change",
+  filterBooks
+);
+
+</script>
+
 <script>
 
 function openModal(
@@ -630,5 +1099,31 @@ function closeModal(){
   </div>
 
 </div>
+
+<script>
+
+function rateBook(star, rating){
+
+  const stars =
+  star.parentElement.querySelectorAll("span");
+
+  stars.forEach((s, index) => {
+
+    if(index < rating){
+
+      s.innerText = "⭐";
+
+    } else {
+
+      s.innerText = "☆";
+
+    }
+
+  });
+
+}
+
+</script>
+
 </body>
 </html>
