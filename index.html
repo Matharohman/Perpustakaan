@@ -234,13 +234,66 @@
     }
 
     /* FOOTER */
-    footer{
-      background:#6d431d;
-      color:white;
-      text-align:center;
-      padding:25px;
-      margin-top:50px;
-    }
+.footer{
+  background:#6d431d;
+  color:white;
+  margin-top:80px;
+  padding-top:60px;
+}
+
+/* CONTAINER */
+.footer-container{
+  width:90%;
+  max-width:1200px;
+  margin:auto;
+
+  display:grid;
+  grid-template-columns:
+  repeat(auto-fit,minmax(220px,1fr));
+
+  gap:40px;
+}
+
+/* BOX */
+.footer-box h2,
+.footer-box h3{
+  margin-bottom:20px;
+}
+
+.footer-box p{
+  line-height:1.8;
+  color:#f1e4d6;
+}
+
+/* LINK */
+.footer-box a{
+  display:block;
+  color:#f1e4d6;
+  text-decoration:none;
+  margin-bottom:12px;
+  transition:0.3s;
+}
+
+.footer-box a:hover{
+  color:#ffd39e;
+  transform:translateX(5px);
+}
+
+/* SOCIAL */
+.social{
+  display:flex;
+  flex-direction:column;
+}
+
+/* COPYRIGHT */
+.footer-bottom{
+  text-align:center;
+  margin-top:50px;
+  padding:20px;
+  border-top:1px solid rgba(255,255,255,0.2);
+  font-size:14px;
+  color:#f1e4d6;
+}
 
     /* ANIMATION */
     @keyframes fadeUp{
@@ -302,7 +355,9 @@
     <nav>
       <a href="index.html" class="active">Beranda</a>
       <a href="buku.html">Buku</a>
-      <a href="Pengumuman.html">Pengumuman</a>
+      <a href="pengumuman.html">Pengumuman</a>
+      <a href="tips.html">Tips Belajar</a>
+      <a href="tentang.html">Tentang</a>
     </nav>
 
   </header>
@@ -412,11 +467,71 @@
   </section>
 
   <!-- FOOTER -->
-  <footer>
-    <p>
-      © 2026 MacaYuk
-    </p>
-  </footer>
+<footer class="footer">
+
+  <div class="footer-container">
+
+    <!-- BRAND -->
+    <div class="footer-box">
+
+      <h2>MacaYuk</h2>
+
+      <p>
+        Website literasi digital untuk membantu
+        siswa membaca, belajar, dan berkembang
+        bersama teknologi modern.
+      </p>
+
+    </div>
+
+    <!-- MENU -->
+    <div class="footer-box">
+
+      <h3>Menu</h3>
+
+      <a href="index.html">Beranda</a>
+      <a href="buku.html">Buku</a>
+      <a href="pengumuman.html">Pengumuman</a>
+      <a href="tips.html">Tips Belajar</a>
+      <a href="tentang.html">Tentang</a>
+    </div>
+
+    <!-- KONTAK -->
+    <div class="footer-box">
+
+      <h3>Kontak</h3>
+
+      <p>📍 Indonesia</p>
+      <p>📧 macayuk@gmail.com</p>
+      <p>📞 0812-3456-7890</p>
+
+    </div>
+
+    <!-- SOSIAL -->
+    <div class="footer-box">
+
+      <h3>Sosial Media</h3>
+
+      <div class="social">
+
+        <a href="#">📘 Facebook</a>
+        <a href="#">📷 Instagram</a>
+        <a href="#">▶ YouTube</a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- COPYRIGHT -->
+  <div class="footer-bottom">
+
+    © 2026 MacaYuk • Membaca Membuka Jendela Dunia 📚
+
+  </div>
+
+</footer>
 
 </body>
 </html>
